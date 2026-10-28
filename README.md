@@ -2,6 +2,8 @@
 
 A modern, full-stack AI Resume Analyzer and Optimizer web application built as an academic college project. Powered by the **Google Gemini API**, the application enables users to upload resumes in **PDF** or **Word (.docx)** format, receive deep analytical feedback regarding recruiter readiness and ATS readability, automatically generate professionally rewritten versions, edit them in an interactive in-browser editor, and export the final result as a printable **PDF** or an editable **DOCX** document.
 
+> 📖 **Looking for a user guide?** Read the comprehensive [**Step-by-Step User Guide (HOW_TO_USE.md)**](./HOW_TO_USE.md) for complete visual walkthroughs, template guides, and interview prep tutorials.
+
 ---
 
 ## 📑 Table of Contents
