@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-neutral-50 text-neutral-900 antialiased font-sans min-h-screen selection:bg-emerald-100 selection:text-emerald-900;
+  }
+}
+
+/* Realistic A4 Paper proportions for Preview and PDF Export */
+.resume-paper-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.page-break-avoid {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Print Stylesheet for High-Fidelity Multi-Page Selectable Vector A4 PDF */
+@page {
+  size: A4 portrait;
+  margin: 10mm 12mm;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide all UI shell, navbars, banners, buttons, sidebars */
+  header, nav, footer, .no-print, button, .customization-toolbar, aside {
+    display: none !important;
+  }
+
+  /* Target resume paper document */
+  #resume-print-area {
+    position: relative !important;
+    display: block !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+  }
+
+  .page-break-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}

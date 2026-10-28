@@ -1,0 +1,35 @@
+{
+  "name": "resume-ai-server",
+  "version": "1.0.0",
+  "description": "Backend API for ResumeAI analyzer using Google Gemini API",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node test/test-suite.js && node test/template-suite.js"
+  },
+  "keywords": [
+    "resume",
+    "analyzer",
+    "gemini",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^2.31.0",
+    "cors": "^2.8.5",
+    "docx": "^9.15.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mammoth": "^1.8.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "pdfkit": "^0.20.2",
+    "unpdf": "^1.9.1"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}
