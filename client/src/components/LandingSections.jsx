@@ -3,23 +3,18 @@ import {
   Sparkles,
   CheckCircle2,
   XCircle,
-  ArrowRight,
   ShieldCheck,
   Zap,
   Target,
-  FileText,
   LayoutTemplate,
-  HelpCircle,
   ChevronDown,
   UploadCloud,
-  PenTool,
   Check,
-  FileCode,
-  Briefcase,
-  Layers,
+  ArrowUp,
+  FileCheck2,
 } from 'lucide-react';
 
-export default function LandingSections({ onBuildClick, onSelectTemplate }) {
+export default function LandingSections() {
   const [openFaq, setOpenFaq] = useState(null);
 
   const toggleFaq = (idx) => {
@@ -57,10 +52,10 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
   ];
 
   return (
-    <div className="mt-20 space-y-24 max-w-5xl mx-auto px-4">
+    <div className="mt-16 sm:mt-20 space-y-20 max-w-5xl mx-auto px-4">
       {/* 1. Interactive Before vs After Showcase */}
       <section className="bg-gradient-to-b from-white to-neutral-50/80 rounded-3xl border border-neutral-200/90 p-6 sm:p-10 shadow-sm">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
             Real Recruiter Impact
           </span>
@@ -135,66 +130,54 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
         </div>
       </section>
 
-      {/* 2. Core Feature Pillars Grid */}
+      {/* 2. Core Capabilities Grid */}
       <section>
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
             Intelligent Features
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mt-3 tracking-tight">
-            Everything You Need to Land Interviews
+            What Happens Once You Upload
           </h2>
           <p className="text-xs sm:text-sm text-neutral-600 mt-2">
-            Built as a comprehensive suite for students, freshers, and experienced engineers.
+            A complete 3-step AI enhancement pipeline that takes your raw resume and makes it interview-ready.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs hover:border-emerald-300 hover:shadow-md transition-all">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-xs hover:border-emerald-300 transition-all">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 font-bold mb-4">
-              <Zap className="w-5 h-5" />
+              1
             </div>
             <h3 className="text-sm font-bold text-neutral-900 mb-1.5">
-              Recruiter Scoring
+              Instant Recruiter Scorecard
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Objective 0–100 benchmark evaluating Summary, Work Experience, Technical Skills, Education, and Grammar.
+              Gemini audits your document across 6 sections, grading summary clarity, technical depth, education, and ATS layout readability.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs hover:border-emerald-300 hover:shadow-md transition-all">
+          <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-xs hover:border-emerald-300 transition-all">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 font-bold mb-4">
-              <Sparkles className="w-5 h-5" />
+              2
             </div>
             <h3 className="text-sm font-bold text-neutral-900 mb-1.5">
-              Active-Voice AI Fixer
+              One-Click "Fix My Resume"
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Turns passive job descriptions into action-driven statements while strictly preserving verified factual history.
+              AI rewrites weak and passive points using high-impact recruiter verbs without inventing fake credentials or hallucinating metrics.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs hover:border-emerald-300 hover:shadow-md transition-all">
+          <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-xs hover:border-emerald-300 transition-all">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 font-bold mb-4">
-              <LayoutTemplate className="w-5 h-5" />
+              3
             </div>
             <h3 className="text-sm font-bold text-neutral-900 mb-1.5">
-              3 Vetted Templates
+              Template Styling & PDF Export
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Choose from Modern Tech, Corporate Professional, or Minimal ATS-Friendly with live color and font customization.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs hover:border-emerald-300 hover:shadow-md transition-all">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 font-bold mb-4">
-              <Target className="w-5 h-5" />
-            </div>
-            <h3 className="text-sm font-bold text-neutral-900 mb-1.5">
-              Interview Prep Kit
-            </h3>
-            <p className="text-xs text-neutral-600 leading-relaxed">
-              Target specific roles by pasting job descriptions to get tailored technical interview questions and project talking points.
+              Preview your rewritten resume in Modern, Corporate, or ATS Minimal styles, fine-tune text in-browser, and download vector A4 PDF.
             </p>
           </div>
         </div>
@@ -204,21 +187,21 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
       <section className="bg-white rounded-3xl border border-neutral-200 p-6 sm:p-10 shadow-sm">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-            Professional Design
+            Export Ready
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mt-3 tracking-tight">
-            Three Vetted Resume Templates
+            Style Your Improved Resume in 3 Formats
           </h2>
           <p className="text-xs sm:text-sm text-neutral-600 mt-2">
-            Tailored layouts engineered to look outstanding to human recruiters and pass automated ATS parsers.
+            After uploading and fixing your resume, select any of these three templates to export your final document.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Modern Tech */}
-          <div className="rounded-2xl border border-neutral-200 hover:border-emerald-500 transition-all p-5 flex flex-col justify-between group hover:shadow-md bg-neutral-50/40">
+          <div className="rounded-2xl border border-neutral-200 p-5 flex flex-col justify-between bg-neutral-50/40">
             <div>
-              <div className="h-44 rounded-xl bg-white border border-neutral-200 p-3 mb-4 shadow-2xs overflow-hidden flex flex-col justify-between">
+              <div className="h-40 rounded-xl bg-white border border-neutral-200 p-3 mb-4 shadow-2xs overflow-hidden flex flex-col justify-between">
                 <div className="flex items-center gap-2 border-b border-emerald-200 pb-2">
                   <div className="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold">
                     JS
@@ -232,13 +215,11 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
                   <div className="col-span-1 border-r border-neutral-100 pr-1 space-y-1">
                     <div className="h-1.5 w-8 bg-neutral-300 rounded" />
                     <div className="h-1 w-full bg-neutral-200 rounded" />
-                    <div className="h-1 w-full bg-neutral-200 rounded" />
                   </div>
                   <div className="col-span-2 space-y-1.5">
                     <div className="h-1.5 w-14 bg-neutral-400 rounded" />
                     <div className="h-1 w-full bg-neutral-200 rounded" />
                     <div className="h-1 w-5/6 bg-neutral-200 rounded" />
-                    <div className="h-1 w-4/6 bg-neutral-200 rounded" />
                   </div>
                 </div>
               </div>
@@ -250,24 +231,20 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
                 </span>
               </div>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Asymmetric 2-column layout with emerald accents, avatar initials, and skill badges. Ideal for tech candidates.
+                Asymmetric 2-column layout with emerald accents, avatar initials, and skill badges.
               </p>
             </div>
 
-            <button
-              type="button"
-              onClick={() => onSelectTemplate && onSelectTemplate('modern')}
-              className="mt-5 w-full inline-flex items-center justify-center gap-1.5 py-2 bg-neutral-900 hover:bg-neutral-800 text-white rounded-xl text-xs font-semibold transition-colors"
-            >
-              <span>Use Modern Template</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            <div className="mt-4 pt-3 border-t border-neutral-200/80 text-[11px] font-medium text-emerald-700 flex items-center gap-1.5">
+              <Check className="w-3.5 h-3.5" />
+              <span>Available immediately after upload</span>
+            </div>
           </div>
 
           {/* Corporate Professional */}
-          <div className="rounded-2xl border border-neutral-200 hover:border-emerald-500 transition-all p-5 flex flex-col justify-between group hover:shadow-md bg-neutral-50/40">
+          <div className="rounded-2xl border border-neutral-200 p-5 flex flex-col justify-between bg-neutral-50/40">
             <div>
-              <div className="h-44 rounded-xl bg-white border border-neutral-200 p-3 mb-4 shadow-2xs overflow-hidden flex flex-col justify-between">
+              <div className="h-40 rounded-xl bg-white border border-neutral-200 p-3 mb-4 shadow-2xs overflow-hidden flex flex-col justify-between">
                 <div className="text-center border-b border-neutral-300 pb-2">
                   <div className="h-2 w-20 bg-neutral-900 mx-auto rounded mb-1" />
                   <div className="h-1 w-28 bg-neutral-400 mx-auto rounded" />
@@ -275,7 +252,6 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
                 <div className="space-y-2 flex-1 pt-2">
                   <div className="h-1.5 w-16 bg-neutral-800 border-b border-neutral-200 pb-1" />
                   <div className="h-1 w-full bg-neutral-200 rounded" />
-                  <div className="h-1 w-11/12 bg-neutral-200 rounded" />
                   <div className="h-1.5 w-16 bg-neutral-800 border-b border-neutral-200 pb-1" />
                   <div className="h-1 w-full bg-neutral-200 rounded" />
                 </div>
@@ -288,31 +264,26 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
                 </span>
               </div>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Traditional structured formal layout with centered contact lines and solid section rules. Best for finance & corporate jobs.
+                Traditional formal layout with centered contact line and solid section dividing rules.
               </p>
             </div>
 
-            <button
-              type="button"
-              onClick={() => onSelectTemplate && onSelectTemplate('professional')}
-              className="mt-5 w-full inline-flex items-center justify-center gap-1.5 py-2 bg-neutral-900 hover:bg-neutral-800 text-white rounded-xl text-xs font-semibold transition-colors"
-            >
-              <span>Use Professional Template</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            <div className="mt-4 pt-3 border-t border-neutral-200/80 text-[11px] font-medium text-emerald-700 flex items-center gap-1.5">
+              <Check className="w-3.5 h-3.5" />
+              <span>Available immediately after upload</span>
+            </div>
           </div>
 
           {/* Minimal ATS-Friendly */}
-          <div className="rounded-2xl border border-neutral-200 hover:border-emerald-500 transition-all p-5 flex flex-col justify-between group hover:shadow-md bg-neutral-50/40">
+          <div className="rounded-2xl border border-neutral-200 p-5 flex flex-col justify-between bg-neutral-50/40">
             <div>
-              <div className="h-44 rounded-xl bg-white border border-neutral-200 p-3 mb-4 shadow-2xs overflow-hidden flex flex-col justify-between">
+              <div className="h-40 rounded-xl bg-white border border-neutral-200 p-3 mb-4 shadow-2xs overflow-hidden flex flex-col justify-between">
                 <div className="border-b-2 border-black pb-1.5">
                   <div className="h-2 w-24 bg-black rounded mb-0.5" />
                   <div className="h-1 w-32 bg-neutral-600 rounded" />
                 </div>
                 <div className="space-y-1.5 flex-1 pt-1.5">
                   <div className="h-1.5 w-20 bg-black uppercase font-bold" />
-                  <div className="h-1 w-full bg-neutral-300 rounded" />
                   <div className="h-1 w-full bg-neutral-300 rounded" />
                   <div className="h-1.5 w-20 bg-black uppercase font-bold" />
                   <div className="h-1 w-11/12 bg-neutral-300 rounded" />
@@ -326,18 +297,14 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
                 </span>
               </div>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Pure single-column monochrome design with uppercase headings. Eliminates tables and graphics for flawless machine parsing.
+                Single-column monochrome design with uppercase headings to pass enterprise ATS portals.
               </p>
             </div>
 
-            <button
-              type="button"
-              onClick={() => onSelectTemplate && onSelectTemplate('ats')}
-              className="mt-5 w-full inline-flex items-center justify-center gap-1.5 py-2 bg-neutral-900 hover:bg-neutral-800 text-white rounded-xl text-xs font-semibold transition-colors"
-            >
-              <span>Use ATS Template</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            <div className="mt-4 pt-3 border-t border-neutral-200/80 text-[11px] font-medium text-emerald-700 flex items-center gap-1.5">
+              <Check className="w-3.5 h-3.5" />
+              <span>Available immediately after upload</span>
+            </div>
           </div>
         </div>
       </section>
@@ -381,7 +348,7 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
         </div>
       </section>
 
-      {/* 5. Bottom Call to Action Banner */}
+      {/* 5. Bottom Call to Action Banner (Single Clear Option) */}
       <section className="rounded-3xl bg-neutral-900 text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-lg">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -389,37 +356,27 @@ export default function LandingSections({ onBuildClick, onSelectTemplate }) {
         <div className="relative z-10 max-w-2xl mx-auto space-y-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-white/10 text-emerald-400 border border-white/15">
             <Sparkles className="w-3.5 h-3.5" />
-            Get Started in Seconds
+            100% Free & Private
           </span>
 
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-            Ready to Build a Winning Resume?
+            Ready to Optimize Your Resume?
           </h2>
 
           <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-lg mx-auto">
-            Audit your existing resume or craft an interview-ready version from scratch. 100% free with no sign-up or credit card required.
+            Upload your resume now to get actionable recruiter feedback, weakness fixes, and an interview-ready document.
           </p>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="pt-4 flex justify-center">
             <button
               type="button"
               onClick={scrollToUpload}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md"
             >
               <UploadCloud className="w-4 h-4" />
-              <span>Upload Existing Resume</span>
+              <span>Upload Your Resume</span>
+              <ArrowUp className="w-3.5 h-3.5" />
             </button>
-
-            {onBuildClick && (
-              <button
-                type="button"
-                onClick={onBuildClick}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 active:scale-95 text-white border border-white/20 rounded-xl text-xs sm:text-sm font-bold transition-all"
-              >
-                <PenTool className="w-4 h-4 text-emerald-400" />
-                <span>Build from Scratch</span>
-              </button>
-            )}
           </div>
         </div>
       </section>

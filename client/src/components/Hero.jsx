@@ -1,27 +1,18 @@
 import React from 'react';
 import {
   Sparkles,
-  UploadCloud,
-  PenTool,
-  ArrowRight,
   ShieldCheck,
   Zap,
   Target,
   FileCheck,
+  ArrowDown,
 } from 'lucide-react';
 
-export default function Hero({ onBuildClick }) {
-  const scrollToUpload = () => {
-    const el = document.getElementById('upload-section');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+export default function Hero() {
   return (
-    <section className="pt-10 pb-6 sm:pt-16 sm:pb-10 text-center max-w-4xl mx-auto px-4">
+    <section className="pt-10 pb-6 sm:pt-14 sm:pb-8 text-center max-w-4xl mx-auto px-4">
       {/* Top Floating Badge */}
-      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200/90 mb-6 shadow-sm hover:bg-emerald-100/70 transition-colors">
+      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200/90 mb-5 shadow-sm">
         <Sparkles className="w-3.5 h-3.5 text-emerald-600 animate-pulse" />
         <span>Powered by Google Gemini 2.5 • Free & 100% Private</span>
       </div>
@@ -38,53 +29,35 @@ export default function Hero({ onBuildClick }) {
         with AI
       </h1>
 
-      {/* Persuasive Subtitle */}
+      {/* Single-Focused Subtitle */}
       <p className="mt-4 sm:mt-5 text-sm sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-        Upload your existing resume to discover weaknesses and get instant fixes, or craft a clean, ATS-compliant resume from scratch with 3 professional templates.
+        Upload your resume to uncover hidden weaknesses, receive an objective recruiter score, and get a professionally rewritten version with ATS-ready templates.
       </p>
 
-      {/* Dual Primary Call-to-Action Buttons */}
-      <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
-        <button
-          type="button"
-          onClick={scrollToUpload}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-bold transition-all shadow-sm hover:shadow-md hover:shadow-emerald-200"
-        >
-          <UploadCloud className="w-4 h-4" />
-          <span>Audit Existing Resume</span>
-        </button>
-
-        {onBuildClick && (
-          <button
-            type="button"
-            onClick={onBuildClick}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-neutral-50 active:scale-95 text-neutral-800 border border-neutral-300 hover:border-neutral-400 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-sm"
-          >
-            <PenTool className="w-4 h-4 text-emerald-600" />
-            <span>Build from Scratch</span>
-            <ArrowRight className="w-3.5 h-3.5 text-neutral-400" />
-          </button>
-        )}
-      </div>
-
       {/* Trust & Performance Proof Badges */}
-      <div className="mt-10 pt-6 border-t border-neutral-200/70 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-neutral-600 font-medium">
-        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/60 border border-neutral-200/60 shadow-xs">
+      <div className="mt-8 pt-6 border-t border-neutral-200/70 grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs text-neutral-600 font-medium">
+        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/70 border border-neutral-200/60 shadow-xs">
           <Zap className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-          <span>Instant Scoring (0-100)</span>
+          <span>Instant Score (0-100)</span>
         </div>
-        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/60 border border-neutral-200/60 shadow-xs">
+        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/70 border border-neutral-200/60 shadow-xs">
           <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
           <span>Zero Data Retention</span>
         </div>
-        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/60 border border-neutral-200/60 shadow-xs">
+        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/70 border border-neutral-200/60 shadow-xs">
           <Target className="w-4 h-4 text-emerald-600 flex-shrink-0" />
           <span>ATS Optimized</span>
         </div>
-        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/60 border border-neutral-200/60 shadow-xs">
+        <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-white/70 border border-neutral-200/60 shadow-xs">
           <FileCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-          <span>Vector A4 PDF Export</span>
+          <span>PDF & DOCX Export</span>
         </div>
+      </div>
+
+      {/* Single Option Guide Indicator */}
+      <div className="mt-6 flex items-center justify-center gap-1.5 text-xs font-semibold text-emerald-700">
+        <span>Upload your resume below to begin</span>
+        <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
       </div>
     </section>
   );

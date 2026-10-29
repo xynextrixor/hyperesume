@@ -167,7 +167,7 @@ export default function App() {
         {currentView === 'analyzer' &&
           (!analysisResult ? (
             <>
-              <Hero onBuildClick={() => setCurrentView('builder')} />
+              <Hero />
 
               <ResumeUpload
                 onAnalyze={handleAnalyze}
@@ -178,19 +178,7 @@ export default function App() {
               {isLoading && <LoadingIndicator fileName={activeFile?.name} />}
 
               {/* Landing Page Content Sections */}
-              {!isLoading && (
-                <LandingSections
-                  onBuildClick={() => {
-                    setCurrentView('builder');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  onSelectTemplate={(tplId) => {
-                    setSelectedTemplateId(tplId);
-                    setCurrentView('preview');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                />
-              )}
+              {!isLoading && <LandingSections />}
             </>
           ) : showFixedView && fixedResume ? (
             /* View 4b: AI Improved Resume Preview & Editor */
