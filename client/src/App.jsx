@@ -6,6 +6,7 @@ import AnalysisResults from './components/AnalysisResults';
 import ResumePreviewEditor from './components/ResumePreviewEditor';
 import LoadingIndicator from './components/LoadingIndicator';
 import ErrorAlert from './components/ErrorAlert';
+import LandingSections from './components/LandingSections';
 import ResumeBuilder from './components/builder/ResumeBuilder';
 import TemplateSelection from './components/templates/TemplateSelection';
 import ResumeLivePreview from './components/templates/ResumeLivePreview';
@@ -176,56 +177,19 @@ export default function App() {
 
               {isLoading && <LoadingIndicator fileName={activeFile?.name} />}
 
-              {/* How It Works Section */}
+              {/* Landing Page Content Sections */}
               {!isLoading && (
-                <section id="how-it-works" className="max-w-4xl mx-auto px-4 mt-16 sm:mt-20">
-                  <div className="text-center mb-8">
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-                      Simple 3-Step Process
-                    </span>
-                    <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-2">
-                      How ResumeAI Works
-                    </h2>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                    <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-sm">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm mb-4 border border-emerald-100">
-                        1
-                      </div>
-                      <h3 className="font-bold text-neutral-900 text-sm mb-1.5">
-                        Upload Resume
-                      </h3>
-                      <p className="text-xs text-neutral-600 leading-relaxed">
-                        Drop your existing resume in PDF or DOCX format. No sign-up or database storage required.
-                      </p>
-                    </div>
-
-                    <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-sm">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm mb-4 border border-emerald-100">
-                        2
-                      </div>
-                      <h3 className="font-bold text-neutral-900 text-sm mb-1.5">
-                        Gemini AI Audit
-                      </h3>
-                      <p className="text-xs text-neutral-600 leading-relaxed">
-                        Receive an objective overall score, strengths, weak points with suggested fixes, and section breakdown.
-                      </p>
-                    </div>
-
-                    <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-sm">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm mb-4 border border-emerald-100">
-                        3
-                      </div>
-                      <h3 className="font-bold text-neutral-900 text-sm mb-1.5">
-                        Rewrite, Edit & Export
-                      </h3>
-                      <p className="text-xs text-neutral-600 leading-relaxed">
-                        Click "Fix My Resume" to generate active bullet points, edit in-browser, and export to PDF or DOCX.
-                      </p>
-                    </div>
-                  </div>
-                </section>
+                <LandingSections
+                  onBuildClick={() => {
+                    setCurrentView('builder');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  onSelectTemplate={(tplId) => {
+                    setSelectedTemplateId(tplId);
+                    setCurrentView('preview');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                />
               )}
             </>
           ) : showFixedView && fixedResume ? (

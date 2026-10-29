@@ -87,7 +87,7 @@ export default function ResumeUpload({ onAnalyze, isLoading, onError }) {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4">
+    <div id="upload-section" className="w-full max-w-2xl mx-auto px-4 scroll-mt-24">
       <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm p-5 sm:p-8">
         {/* Upload Container */}
         {!selectedFile ? (
